@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "beacon-hub-144-ryan-vo",
+  "owner": "A220man",
+  "email": "ryandtvo@gmail.com",
+  "domain": "AI/ML developer tools",
+  "summary": "Work in progress: beacon-hub-144-ryan-vo",
+  "workflows": [
+    "Configure LLM providers and register multiple models per connection",
+    "Create agents with selected models and chat with streaming responses",
+    "Execute sandboxed code and tool calls within agent conversations"
+  ],
+  "auth": "oidc-keycloak-saml-broker",
+  "llm_providers": [
+    "openai-compatible",
+    "anthropic",
+    "gemini",
+    "ollama"
+  ],
+  "status": "work-in-progress"
+}

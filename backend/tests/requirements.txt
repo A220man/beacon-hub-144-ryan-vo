@@ -1,0 +1,6 @@
+# Beacon Hub Backend Tests
+
+pytest
+pytest-asyncio
+httpx
+fakeredis
