@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 
 from app.core.config import get_settings
 from app.core.database import init_db, close_db
-from app.api import health, auth, providers
+from app.api import health, auth, providers, agents
 
 
 settings = get_settings()
@@ -51,7 +51,7 @@ def create_app() -> FastAPI:
             content={"detail": "Internal server error"},
         )
 
-    # Include routers
+    app.include_router(agents.router)
     app.include_router(health.router)
     app.include_router(auth.router)
     app.include_router(providers.router)
