@@ -117,6 +117,7 @@ class AgentUpdate(BaseModel):
     tools: Optional[list[str]] = None
     config: Optional[dict] = None
     is_active: Optional[bool] = None
+    model_id: Optional[int] = Field(None, ge=1)
 
     model_config = ConfigDict(protected_namespaces=())
 

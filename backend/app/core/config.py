@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     database_max_overflow: int = 10
 
     # Security
-    secret_key: str = Field(default="dev-secret-change-in-production", min_length=32)
+    secret_key: str = Field(default="dev-secret-change-in-production-please-use-longer-key", min_length=32)
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     refresh_token_expire_days: int = 7
