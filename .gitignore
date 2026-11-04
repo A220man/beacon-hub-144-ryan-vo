@@ -59,3 +59,15 @@ frontend/.vite/
 *.p12
 *.pfx
 secrets/
+.turbo/
+.env.local
+.env.*.local
+**/data/media/
+node_modules/
+*.pyc
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
