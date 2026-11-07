@@ -68,15 +68,23 @@
     {
       "id": "provider-model-management",
       "title": "Multiple models per OpenAI-compatible provider connection",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "Configure provider credentials once",
         "Register multiple model IDs under same connection",
         "Bots can select model from connection",
         "Tasks/routines can override bot's default model"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "backend/app/core/security.py",
+        "backend/app/api/providers.py",
+        "backend/app/api/auth.py",
+        "frontend/src/components/Providers.tsx"
+      ],
+      "tests": [
+        "backend/tests/test_providers.py",
+        "frontend/src/components/Health.test.tsx"
+      ]
     },
     {
       "id": "agent-chat-workflow",

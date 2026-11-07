@@ -25,13 +25,17 @@ Tests: `backend/tests/test_health.py`, `backend/tests/test_auth.py`, `backend/te
 
 ### provider-model-management — Multiple models per OpenAI-compatible provider connection
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - Configure provider credentials once
 - Register multiple model IDs under same connection
 - Bots can select model from connection
 - Tasks/routines can override bot's default model
+
+Implementation: `backend/app/core/security.py`, `backend/app/api/providers.py`, `backend/app/api/auth.py`, `frontend/src/components/Providers.tsx`
+
+Tests: `backend/tests/test_providers.py`, `frontend/src/components/Health.test.tsx`
 
 ### agent-chat-workflow — Agent chat with model selection and sandbox execution
 
