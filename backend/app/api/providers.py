@@ -8,7 +8,7 @@ from sqlalchemy.orm import selectinload
 
 from app.core.config import get_settings
 from app.core.database import get_db
-from app.core.security import get_password_hash
+from app.core.security import get_password_hash, get_current_user_id
 from app.models import Provider, Model, User
 from app.schemas import (
     ProviderCreate,
@@ -24,11 +24,6 @@ router = APIRouter(prefix="/providers", tags=["providers"])
 settings = get_settings()
 
 
-# Dependency to get current user (placeholder - in real app, use auth dependency)
-async def get_current_user_id(request: Request) -> int:
-    """Extract user ID from JWT cookie. Placeholder for actual auth dependency."""
-    # This will be replaced with proper auth dependency
-    return 1
 
 
 # Provider endpoints
