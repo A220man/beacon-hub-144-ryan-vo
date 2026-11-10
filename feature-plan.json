@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "project-skeleton",
+  "current_feature": "provider-model-management",
   "features": [
     {
       "id": "project-skeleton",
@@ -37,26 +37,7 @@
         "frontend/src/components/Providers.tsx",
         "frontend/src/components/Health.test.tsx",
         "frontend/src/hooks/useAuth.tsx",
-        "frontend/src/api/client.ts",
-        "frontend/src/types/api.ts",
-        "frontend/src/index.css",
-        "frontend/tsconfig.json",
-        "frontend/vite.config.ts",
-        "frontend/src/test-setup.ts",
-        "frontend/index.html",
-        "frontend/nginx.conf",
-        "docker-compose.yaml",
-        "compose.yaml",
-        "backend/Dockerfile",
-        "frontend/Dockerfile",
-        "portfolio.json",
-        "README.md",
-        "LICENSE",
-        "CHANGELOG.md",
-        "pyproject.toml",
-        ".gitignore",
-        ".env.example",
-        ".github/workflows/ci.yml"
+        "frontend/src/api/client.ts"
       ],
       "tests": [
         "backend/tests/test_health.py",
@@ -68,7 +49,7 @@
     {
       "id": "provider-model-management",
       "title": "Multiple models per OpenAI-compatible provider connection",
-      "status": "in_progress",
+      "status": "done",
       "acceptance": [
         "Configure provider credentials once",
         "Register multiple model IDs under same connection",
@@ -76,13 +57,16 @@
         "Tasks/routines can override bot's default model"
       ],
       "implementation": [
-        "backend/app/core/security.py",
+        "backend/app/models/__init__.py",
+        "backend/app/schemas/__init__.py",
         "backend/app/api/providers.py",
-        "backend/app/api/auth.py",
-        "frontend/src/components/Providers.tsx"
+        "backend/app/api/agents.py",
+        "frontend/src/components/Providers.tsx",
+        "frontend/src/api/client.ts"
       ],
       "tests": [
         "backend/tests/test_providers.py",
+        "backend/tests/test_agents.py",
         "frontend/src/components/Health.test.tsx"
       ]
     },

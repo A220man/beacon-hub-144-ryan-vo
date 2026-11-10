@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-project-skeleton
+provider-model-management
 
 ## Roadmap
 
@@ -19,13 +19,13 @@ Acceptance:
 - Basic OIDC authentication flow configured
 - SQLite for development, PostgreSQL for production
 
-Implementation: `backend/app/main.py`, `backend/app/core/config.py`, `backend/app/core/database.py`, `backend/app/core/security.py`, `backend/app/core/oidc.py`, `backend/app/api/health.py`, `backend/app/api/auth.py`, `backend/app/api/providers.py`, `backend/app/models/__init__.py`, `backend/app/schemas/__init__.py`, `backend/requirements.txt`, `backend/tests/conftest.py`, `backend/tests/test_health.py`, `backend/tests/test_auth.py`, `backend/tests/test_providers.py`, `frontend/package.json`, `frontend/src/main.tsx`, `frontend/src/App.tsx`, `frontend/src/components/Layout.tsx`, `frontend/src/components/Health.tsx`, `frontend/src/components/Providers.tsx`, `frontend/src/components/Health.test.tsx`, `frontend/src/hooks/useAuth.tsx`, `frontend/src/api/client.ts`, `frontend/src/types/api.ts`, `frontend/src/index.css`, `frontend/tsconfig.json`, `frontend/vite.config.ts`, `frontend/src/test-setup.ts`, `frontend/index.html`, `frontend/nginx.conf`, `docker-compose.yaml`, `compose.yaml`, `backend/Dockerfile`, `frontend/Dockerfile`, `portfolio.json`, `README.md`, `LICENSE`, `CHANGELOG.md`, `pyproject.toml`, `.gitignore`, `.env.example`, `.github/workflows/ci.yml`
+Implementation: `backend/app/main.py`, `backend/app/core/config.py`, `backend/app/core/database.py`, `backend/app/core/security.py`, `backend/app/core/oidc.py`, `backend/app/api/health.py`, `backend/app/api/auth.py`, `backend/app/api/providers.py`, `backend/app/models/__init__.py`, `backend/app/schemas/__init__.py`, `backend/requirements.txt`, `backend/tests/conftest.py`, `backend/tests/test_health.py`, `backend/tests/test_auth.py`, `backend/tests/test_providers.py`, `frontend/package.json`, `frontend/src/main.tsx`, `frontend/src/App.tsx`, `frontend/src/components/Layout.tsx`, `frontend/src/components/Health.tsx`, `frontend/src/components/Providers.tsx`, `frontend/src/components/Health.test.tsx`, `frontend/src/hooks/useAuth.tsx`, `frontend/src/api/client.ts`
 
 Tests: `backend/tests/test_health.py`, `backend/tests/test_auth.py`, `backend/tests/test_providers.py`, `frontend/src/components/Health.test.tsx`
 
 ### provider-model-management — Multiple models per OpenAI-compatible provider connection
 
-Status: in_progress
+Status: done
 
 Acceptance:
 - Configure provider credentials once
@@ -33,9 +33,9 @@ Acceptance:
 - Bots can select model from connection
 - Tasks/routines can override bot's default model
 
-Implementation: `backend/app/core/security.py`, `backend/app/api/providers.py`, `backend/app/api/auth.py`, `frontend/src/components/Providers.tsx`
+Implementation: `backend/app/models/__init__.py`, `backend/app/schemas/__init__.py`, `backend/app/api/providers.py`, `backend/app/api/agents.py`, `frontend/src/components/Providers.tsx`, `frontend/src/api/client.ts`
 
-Tests: `backend/tests/test_providers.py`, `frontend/src/components/Health.test.tsx`
+Tests: `backend/tests/test_providers.py`, `backend/tests/test_agents.py`, `frontend/src/components/Health.test.tsx`
 
 ### agent-chat-workflow — Agent chat with model selection and sandbox execution
 
