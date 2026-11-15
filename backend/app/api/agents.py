@@ -8,8 +8,6 @@ from app.models import Agent, Model, Provider
 from app.schemas import AgentCreate, AgentUpdate, AgentResponse, PaginatedResponse
 router = APIRouter(prefix="/agents", tags=["agents"])
 settings = get_settings()
-async def get_current_user_id() -> int:
-    return 1
 @router.post("", response_model=AgentResponse, status_code=status.HTTP_201_CREATED)
 async def create_agent(agent_data: AgentCreate, db: AsyncSession = Depends(get_db), user_id: int = Depends(get_current_user_id)) -> AgentResponse:
     result = await db.execute(select(Model).join(Provider).where(Model.id == agent_data.model_id, Provider.owner_id == user_id))
