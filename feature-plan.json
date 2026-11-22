@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "provider-model-management",
+  "current_feature": "agent-chat-workflow",
   "features": [
     {
       "id": "project-skeleton",
@@ -73,15 +73,21 @@
     {
       "id": "agent-chat-workflow",
       "title": "Agent chat with model selection and sandbox execution",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "Create agents with selected model",
-        "Chat interface with streaming responses",
-        "Sandbox execution for code/tools",
-        "Conversation persistence"
+        "Chat interface with message sending endpoint",
+        "Sandbox execution for code/tools (planned)",
+        "Conversation persistence (planned)"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "backend/app/api/conversations.py - Message endpoint",
+        "backend/app/main.py - conversations router inclusion",
+        "frontend/src/api/client.ts - sendMessage method"
+      ],
+      "tests": [
+        "backend/tests/test_conversations.py - new test file (to be created)"
+      ]
     },
     {
       "id": "onboarding-flow",

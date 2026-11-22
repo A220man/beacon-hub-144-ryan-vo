@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-provider-model-management
+agent-chat-workflow
 
 ## Roadmap
 
@@ -39,13 +39,17 @@ Tests: `backend/tests/test_providers.py`, `backend/tests/test_agents.py`, `front
 
 ### agent-chat-workflow — Agent chat with model selection and sandbox execution
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - Create agents with selected model
-- Chat interface with streaming responses
-- Sandbox execution for code/tools
-- Conversation persistence
+- Chat interface with message sending endpoint
+- Sandbox execution for code/tools (planned)
+- Conversation persistence (planned)
+
+Implementation: `backend/app/api/conversations.py - Message endpoint`, `backend/app/main.py - conversations router inclusion`, `frontend/src/api/client.ts - sendMessage method`
+
+Tests: `backend/tests/test_conversations.py - new test file (to be created)`
 
 ### onboarding-flow — Guided onboarding with stepper and integration cards
 
