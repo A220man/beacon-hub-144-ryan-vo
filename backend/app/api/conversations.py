@@ -91,6 +91,16 @@ async def create_message(
     if not conversation:
         raise HTTPException(status_code=404, detail="Conversation not found")
 
+    # Verify model belongs to user if provided
+    if message_data.model_id is not None:
+        from app.models import Model
+        model_result = await db.execute(
+            select(Model).join(Provider).where(Model.id == message_data.model_id, Provider.owner_id == user_id)
+        )
+        model = model_result.scalar_one_or_none()
+        if not model:
+            raise HTTPException(status_code=404, detail="Model not found or not owned by user")
+
     # Create the message
     message = Message(
         role=message_data.role,
@@ -99,6 +109,7 @@ async def create_message(
         tool_call_id=message_data.tool_call_id,
         meta=message_data.meta or {},
         conversation_id=conversation_id,
+        model_id=message_data.model_id,
     )
     db.add(message)
     await db.commit()

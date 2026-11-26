@@ -155,6 +155,7 @@ class Message(Base):
     tool_call_id: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     meta: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC), nullable=False)
+    model_id: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
 
     # Relationships
     conversation: Mapped["Conversation"] = relationship(back_populates="messages")
