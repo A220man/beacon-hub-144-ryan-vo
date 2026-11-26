@@ -169,6 +169,7 @@ class MessageBase(BaseModel):
 
 class MessageCreate(MessageBase):
     conversation_id: int
+    model_id: Optional[int] = None
 
 
 class MessageResponse(MessageBase):
